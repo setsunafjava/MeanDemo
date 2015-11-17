@@ -1,0 +1,17 @@
+<section ng-controller="ArticlesController" ng-init="find()">
+    <h1>Articles</h1>
+    <ul>
+        <li ng-repeat="article in articles">
+            <a ng-href="#!/articles/{{article._id}}" ng-bind="article.title"></a>
+            <br>
+            <small ng-bind="article.created | date : 'medium'"></small>
+            <small>/</small>
+            <small ng-bind="article.creator.fullName"></small>
+            <p ng-bind="article.content"></p>
+        </li>
+    </ul>
+    <div ng-hide="!articles || articles.length">
+        No articles yet, why don't you <a href="/#!/articles/create">create one</a>
+
+    </div>
+</section>

@@ -1,0 +1,25 @@
+<section ng-controller="ArticlesController" ng-init="findOne()">
+    <h1>Edit Article</h1>
+    <form ng-submit="update()" novalidate>
+        <div>
+            <label for="title">Title</label>
+            <div>
+                <input type="text" data-ng-model="article.title" id="title"
+                       placeholder="Title" required/>
+            </div>
+        </div>
+        <div>
+            <label for="content">Content</label>
+            <div>
+                <input type="text" data-ng-model="article.content" id="content"
+                       placeholder="Content" required/>
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="Update"/>
+        </div>
+        <div ng-show="error">
+            <strong ng-bind="error"></strong>
+        </div>
+    </form>
+</section>

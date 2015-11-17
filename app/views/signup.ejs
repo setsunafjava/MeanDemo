@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        <%=title %>
+    </title>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<div>
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
+        <h3 class="text-center">Sign Up</h3>
+        <form name="userForm" action="/signup" method="post" class="signin" novalidate autocomplete="off">
+            <fieldset>
+                <% for(var i in messages) { %>
+                <div class="form-group">
+                    <div  ng-show="error" class="text-center text-danger">
+                        <div class="alert alert-danger" role="alert">
+                            <strong ><%= messages[i] %></strong>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+
+                <div class="form-group" show-errors>
+                    <div class="input-group" show-errors>
+          <span class="input-group-addon">
+            <i class="text-muted glyphicon glyphicon-star"></i>
+          </span>
+                        <input type="text" id="firstName" name="firstName" class="form-control"  placeholder="First Name" >
+                    </div>
+                </div>
+                <div class="form-group" show-errors>
+                    <div class="input-group" show-errors>
+          <span class="input-group-addon">
+            <i class="text-muted glyphicon glyphicon-star"></i>
+          </span>
+                        <input type="text" id="lastName" name="lastName" class="form-control"  placeholder="Last Name" >
+                    </div>
+                </div>
+                <div class="form-group" show-errors>
+                    <div class="input-group" show-errors>
+          <span class="input-group-addon">
+            <i class="text-muted glyphicon glyphicon-envelope"></i>
+          </span>
+                        <input type="email" id="email" name="email" class="form-control"  placeholder="Email"  >
+                    </div>
+                </div>
+                <div class="form-group" show-errors>
+                    <div class="input-group" show-errors>
+          <span class="input-group-addon">
+            <i class="text-muted glyphicon glyphicon-user"></i>
+          </span>
+                        <input type="text" id="username" name="username" class="form-control"  placeholder="Username"  >
+                    </div>
+                </div>
+                <div class="form-group" show-errors>
+                    <div class="input-group" show-errors>
+          <span class="input-group-addon">
+            <i class="text-muted glyphicon glyphicon-asterisk"></i>
+          </span>
+                        <input type="password" id="password" name="password" class="form-control"  placeholder="Password" >
+                    </div>
+                </div>
+                <div class="text-center form-group">
+                    <button type="submit" class="btn btn-success btn-block">Sign up</button>
+
+                </div>
+
+                <div class="text-center">
+                    or <a href="/signin" class="show-signup">Sign in</a>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

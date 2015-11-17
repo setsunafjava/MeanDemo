@@ -1,0 +1,46 @@
+<div ng-controller="myControll">
+    <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
+        <h3 class="text-center">Login</h3>
+        <form name="userForm" ng-submit="signin()" class="signin" novalidate autocomplete="off">
+            <fieldset>
+
+                <div class="form-group">
+                    <div  ng-show="error" class="text-center text-danger">
+                        <div class="alert alert-danger" role="alert">
+                            <strong ng-bind="error"></strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group" show-errors>
+              <span class="input-group-addon">
+                <i class="text-muted glyphicon glyphicon-user"></i>
+              </span>
+                        <input type="text" id="username" name="username" class="form-control" ng-model="credentials.username" placeholder="Username" lowercase required>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group" show-errors>
+              <span class="input-group-addon">
+                <i class="text-muted glyphicon glyphicon-asterisk"></i>
+              </span>
+                        <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" required>
+
+                    </div>
+                </div>
+                <div class="text-center form-group">
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Sign in</button>
+                    </br>
+                </div>
+                <div class="text-center forgot-password">
+                    <a ui-sref="password.forgot">Forgot your password?</a>
+                    <a ui-sref="authentication.signup">Sign up</a>
+                </div>
+            </fieldset>
+        </form>
+        <div >
+            {{authentication}}
+        </div>
+    </div>
+</div>

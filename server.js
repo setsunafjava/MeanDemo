@@ -9,6 +9,7 @@ var express = require('./config/express'),
     socket = require('./app/routes/socket.server.routes.js') ;
 var db = mongoose();
 var app = express();
+
 var passport = passport();
 var server = require('http').createServer(app),
     io = require('socket.io').listen(server);

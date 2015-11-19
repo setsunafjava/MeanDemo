@@ -1,0 +1,9 @@
+---
+applications:
+- name: SentimentAnalysis
+  memory: 64M
+  instances: 1
+  command: node server.js
+  host: sentimentanalysis-${random-word}
+  domain: mybluemix.net
+  path: .
